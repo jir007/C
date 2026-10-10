@@ -1,0 +1,325 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+void hangman(){
+     printf("   +---+\n");
+    printf("   |   |\n");
+    printf("   O   |\n");
+    printf("  /|\\  |\n");
+    printf("  / \\  |\n");
+    printf("       |\n");
+    printf(" =========\n");
+}
+void hangman2(){
+         printf("   +---+\n");
+    printf("   |   |\n");
+    printf("   O   |\n");
+    printf("  /|\\  |\n");
+    printf("  /    |\n");
+    printf("       |\n");
+    printf(" =========\n");
+}
+void hangman3(){
+         printf("\n   +---+\n");
+    printf("   |   |\n");
+    printf("   O   |\n");
+    printf("  /|\\  |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf(" =========\n");
+}
+void hangman4(){
+         printf("\n   +---+\n");
+    printf("   |   |\n");
+    printf("   O   |\n");
+    printf("  /|   |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf(" =========\n");
+}
+void hangman5(){
+         printf("\n   +---+\n");
+    printf("   |   |\n");
+    printf("   O   |\n");
+    printf("   |   |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf(" =========\n");
+}
+void hangman6(){
+         printf("\n   +---+\n");
+    printf("   |   |\n");
+    printf("   O   |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf(" =========\n");
+}
+void hangman7(){
+         printf("\n   +---+\n");
+    printf("   |   |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf("       |\n");
+    printf(" =========\n");
+    printf("You Failed.");
+}
+
+int main(){
+    
+    char gamemodes[20];
+    int valid;
+    char Easyword[5] = "Dog";
+    char Mediumword[50] = "Diamond";
+    char Hardword[50] = "Jazz";
+
+    printf("\n");
+    printf("  _   _    _    _   _  ____ __  __    _    _   _ \n");
+    printf(" | | | |  / \\  | \\ | |/ ___|  \\/  |  / \\  | \\ | |\n");
+    printf(" | |_| | / _ \\ |  \\| | |  _| |\\/| | / _ \\ |  \\| |\n");
+    printf(" |  _  |/ ___ \\| |\\  | |_| | |  | |/ ___ \\| |\\  |\n");
+    printf(" |_| |_/_/   \\_\\_| \\_|\\____|_|  |_/_/   \\_\\_| \\_|\n");
+    printf("(BETA)\n");
+   
+    do{
+        valid = 1;
+         printf("Enter Game Mode (Easy, Medium, Hard): ");
+        fgets(gamemodes, sizeof(gamemodes), stdin);
+        gamemodes[strcspn(gamemodes, "\n")] = '\0';
+
+        if(strcasecmp(gamemodes, "Easy") == 0){
+            printf("Easy Mode\n");
+            printf("Your Word is: A quadrupedal animal known simply as a Man's Best Friend.\n");
+            hangman();
+
+            printf("Enter Word: ");
+            fgets(Easyword, sizeof(Easyword), stdin);
+            Easyword[strcspn(Easyword, "\n")] = '\0';
+
+            if (strcasecmp(Easyword, "Dog") == 0){
+                printf("You Win!\n");
+                printf("\nGame By: Robin Matthew P. Anglo\n");
+                printf("Thanks for playing my game!\n");
+            } else{
+                hangman2();
+                printf("Enter Word: ");
+                fgets(Easyword, sizeof(Easyword), stdin);
+                Easyword[strcspn(Easyword, "\n")] = '\0';
+
+                if (strcasecmp(Easyword, "Dog") == 0){
+                printf("You Win!\n");
+                printf("\nGame By: Robin Matthew P. Anglo\n");
+                printf("Thanks for playing my game!\n");
+                } else{
+                    hangman3();
+                    printf("Enter Word: ");
+                    fgets(Easyword, sizeof(Easyword), stdin);
+                    Easyword[strcspn(Easyword, "\n")] = '\0';
+
+                    if(strcasecmp(Easyword, "Dog") == 0){
+                        printf("You Win!\n");
+                        printf("\nGame By: Robin Matthew P. Anglo\n");
+                        printf("Thanks for playing my game!\n");
+                    }else{
+                        hangman4();
+                        printf("Enter Word: ");
+                        fgets(Easyword, sizeof(Easyword), stdin);
+                        Easyword[strcspn(Easyword, "\n")] = '\0';
+
+                        if(strcasecmp(Easyword, "Dog") == 0){
+                            printf("You Win!");
+                            printf("\nGame By: Robin Matthew P. Anglo\n");
+                            printf("Thanks for playing my game!\n");
+                        } else{
+                            hangman5();
+                            printf("Enter Word: ");
+                            fgets(Easyword, sizeof(Easyword), stdin);
+                            Easyword[strcspn(Easyword, "\n")] = '\0';
+
+                            if(strcasecmp(Easyword, "Dog") == 0){
+                                printf("You Win!");
+                                printf("\nGame By: Robin Matthew P. Anglo\n");
+                                printf("Thanks for playing my game!\n");
+                            } else{
+                                hangman6();
+                                printf("Enter Word: ");
+                                fgets(Easyword, sizeof(Easyword), stdin);
+                                Easyword[strcspn(Easyword, "\n")] = '\0';
+
+                                if(strcasecmp(Easyword, "Dog") == 0){
+                                    printf("You Win!");
+                                    printf("\nGame By: Robin Matthew P. Anglo\n");
+                                    printf("Thanks for playing my game!\n");
+                                } else{
+                                    hangman7();
+                                    printf("\nGame By: Robin Matthew P. Anglo\n");
+                                    printf("Thanks for playing my game!\n");
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        } else if(strcasecmp(gamemodes, "Medium") == 0){
+            printf("Medium Mode\n");
+            printf("Your Word is: The Hardest known gemstone.\n");
+            hangman();
+
+            printf("Enter Word: ");
+            fgets(Mediumword, sizeof(Mediumword), stdin);
+            Mediumword[strcspn(Mediumword, "\n")] = '\0';
+
+            if (strcasecmp(Mediumword, "Diamond") == 0){
+                printf("You Win!\n");
+                printf("\nGame By: Robin Matthew P. Anglo\n");
+                printf("Thanks for playing my game!\n");
+            } else{
+                hangman2();
+                printf("Enter Word: ");
+                fgets(Mediumword, sizeof(Mediumword), stdin);
+                Mediumword[strcspn(Mediumword, "\n")] = '\0';
+
+                if (strcasecmp(Mediumword, "Diamond") == 0){
+                printf("You Win!\n");
+                printf("\nGame By: Robin Matthew P. Anglo\n");
+                printf("Thanks for playing my game!\n");
+                } else{
+                    hangman3();
+                    printf("Enter Word: ");
+                    fgets(Mediumword, sizeof(Mediumword), stdin);
+                    Mediumword[strcspn(Mediumword, "\n")] = '\0';
+
+                    if(strcasecmp(Mediumword, "Diamond") == 0){
+                        printf("You Win!\n");
+                        printf("\nGame By: Robin Matthew P. Anglo\n");
+                        printf("Thanks for playing my game!\n");
+                    }else{
+                        hangman4();
+                        printf("Enter Word: ");
+                        fgets(Mediumword, sizeof(Mediumword), stdin);
+                        Mediumword[strcspn(Mediumword, "\n")] = '\0';
+
+                        if(strcasecmp(Mediumword, "Diamond") == 0){
+                            printf("You Win!");
+                            printf("\nGame By: Robin Matthew P. Anglo\n");
+                            printf("Thanks for playing my game!\n");
+                        } else{
+                            hangman5();
+                            printf("Enter Word: ");
+                            fgets(Mediumword, sizeof(Mediumword), stdin);
+                            Mediumword[strcspn(Mediumword, "\n")] = '\0';
+
+                            if(strcasecmp(Mediumword, "Diamond") == 0){
+                                printf("You Win!");
+                                printf("\nGame By: Robin Matthew P. Anglo\n");
+                                printf("Thanks for playing my game!\n");
+                            } else{
+                                hangman6();
+                                printf("Enter Word: ");
+                                fgets(Mediumword, sizeof(Mediumword), stdin);
+                                Mediumword[strcspn(Mediumword, "\n")] = '\0';
+
+                                if(strcasecmp(Easyword, "Diamond") == 0){
+                                    printf("You Win!");
+                                    printf("\nGame By: Robin Matthew P. Anglo\n");
+                                    printf("Thanks for playing my game!\n");
+                                } else{
+                                    hangman7();
+                                    printf("\nGame By: Robin Matthew P. Anglo\n");
+                                    printf("Thanks for playing my game!\n");
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        } else if(strcasecmp(gamemodes, "Hard") == 0){
+            printf("Hard Mode\n");
+            printf("Your Word is: A genre of music born in New Orleans, known for improvisation\n");
+            hangman();
+
+            printf("Enter Word: ");
+            fgets(Hardword, sizeof(Hardword), stdin);
+            Hardword[strcspn(Hardword, "\n")] = '\0';
+
+            if (strcasecmp(Hardword, "Jazz") == 0){
+                printf("You Win!\n");
+                printf("\nGame By: Robin Matthew P. Anglo\n");
+                printf("Thanks for playing my game!\n");
+            } else{
+                hangman2();
+                printf("Enter Word: ");
+                fgets(Hardword, sizeof(Hardword), stdin);
+                Hardword[strcspn(Hardword, "\n")] = '\0';
+
+                if (strcasecmp(Hardword, "Jazz") == 0){
+                printf("You Win!\n");
+                printf("\nGame By: Robin Matthew P. Anglo\n");
+                printf("Thanks for playing my game!\n");
+                } else{
+                    hangman3();
+                    printf("Enter Word: ");
+                    fgets(Hardword, sizeof(Hardword), stdin);
+                    Hardword[strcspn(Hardword, "\n")] = '\0';
+
+                    if(strcasecmp(Hardword, "Jazz") == 0){
+                        printf("You Win!\n");
+                        printf("\nGame By: Robin Matthew P. Anglo\n");
+                        printf("Thanks for playing my game!\n");
+                    }else{
+                        hangman4();
+                        printf("Enter Word: ");
+                        fgets(Hardword, sizeof(Hardword), stdin);
+                        Hardword[strcspn(Hardword, "\n")] = '\0';
+
+                        if(strcasecmp(Hardword, "Jazz") == 0){
+                            printf("You Win!");
+                            printf("\nGame By: Robin Matthew P. Anglo\n");
+                            printf("Thanks for playing my game!\n");
+                        } else{
+                            hangman5();
+                            printf("Enter Word: ");
+                            fgets(Hardword, sizeof(Hardword), stdin);
+                            Hardword[strcspn(Hardword, "\n")] = '\0';
+
+                            if(strcasecmp(Hardword, "Jazz") == 0){
+                                printf("You Win!");
+                                printf("\nGame By: Robin Matthew P. Anglo\n");
+                                printf("Thanks for playing my game!\n");
+                            } else{
+                                hangman6();
+                                printf("Enter Word: ");
+                                fgets(Hardword, sizeof(Hardword), stdin);
+                                Hardword[strcspn(Hardword, "\n")] = '\0';
+
+                                if(strcasecmp(Hardword, "Jazz") == 0){
+                                    printf("You Win!");
+                                    printf("\nGame By: Robin Matthew P. Anglo\n");
+                                    printf("Thanks for playing my game!\n");
+                                } else{
+                                    hangman7();
+                                    printf("\nGame By: Robin Matthew P. Anglo\n");
+                                    printf("Thanks for playing my game!\n");
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        } else{
+        printf("Invalid Input. Try Again\n");
+        valid = 0;
+        }
+
+    } while(!valid);
+
+    return 0;
+}
